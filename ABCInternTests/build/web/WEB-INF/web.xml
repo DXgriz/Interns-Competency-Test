@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>NameServlet</servlet-name>
+        <servlet-class>za.ac.wedowebapps.controller.NameServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TestChoiceServlet</servlet-name>
+        <servlet-class>za.ac.wedowebapps.controller.TestChoiceServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>QuestionGeneratorServlet</servlet-name>
+        <servlet-class>za.ac.wedowebapps.controller.QuestionGeneratorServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AnswerServlet</servlet-name>
+        <servlet-class>za.ac.wedowebapps.controller.AnswerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EndSessionServlet</servlet-name>
+        <servlet-class>za.ac.wedowebapps.controller.EndSessionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NameServlet</servlet-name>
+        <url-pattern>/NameServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TestChoiceServlet</servlet-name>
+        <url-pattern>/TestChoiceServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>QuestionGeneratorServlet</servlet-name>
+        <url-pattern>/QuestionGeneratorServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AnswerServlet</servlet-name>
+        <url-pattern>/AnswerServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EndSessionServlet</servlet-name>
+        <url-pattern>/EndSessionServlet.do</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <!-- Error pages -->
+    <error-page>
+        <exception-type>
+            java.lang.NumberFormatException
+        </exception-type>
+
+        <location>
+            /number_format_error_page.jsp
+        </location>
+    </error-page>
+     <error-page>
+        <exception-type>
+            InvalidNameException
+        </exception-type>
+
+        <location>
+            /name_invalid_exception.jsp
+        </location>
+    </error-page>
+</web-app>
